@@ -40,7 +40,7 @@ contract CerebrumDAOTokenTest is Test {
         assertEq(token.balanceOf(cerebrumDao), 86000000000 * 10 ** 18);
     }
 
-    function testTransfersAndBurns() public {
+    function testTransfers() public {
         vm.startPrank(cerebrumDao); 
         token.transfer(alice, 1000 ether);
         assertEq(token.balanceOf(alice), 1000 ether);
@@ -50,6 +50,19 @@ contract CerebrumDAOTokenTest is Test {
         vm.startPrank(alice);
         token.transfer(bob, 100 ether);
         assertEq(token.balanceOf(bob), 100 ether);
+    }
+
+    function testTokenBurn() public {
+        vm.startPrank(cerebrumDao);
+        token.transfer(alice, 1000 ether);
+        vm.stopPrank();
+        
+        assertEq(token.totalSupply(), 86000000000 * 10 ** 18);
+
+        vm.startPrank(alice);
+        token.burn(100 ether);
+        assertEq(token.balanceOf(alice), 900 ether);
+        assertEq(token.totalSupply(), 86000000000 * 10 ** 18 - 100 ether);
     }
 
     function testPermits() public {
