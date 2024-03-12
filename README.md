@@ -38,5 +38,8 @@ Bridged 31_400 NEURON from Sepolia to Base Sepolia
 IN https://sepolia.etherscan.io/tx/0xbc3662aed33159efff45847372151529cab2cd785ec18b64219070fe4f836fb8
 OUT https://sepolia.basescan.org/tx/0xe54f5fc397cf11a7aced453bb4e54ec7735717f6083071c141754939967e342f
 
+Withdraw 1_400 NEURON from Base Sepolia to Sepolia
+IN (burn) https://sepolia.basescan.org/tx/0x1fa07bf3c7fb8b91d91bb548e0a68e8712716a9b59ca384b5357fa873e6d22cc
+OUT 
 
 
