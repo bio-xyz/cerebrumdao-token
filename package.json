@@ -1,0 +1,12 @@
+{
+  "name": "biotokens",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:bio-xyz/cerebrumdao-token.git",
+  "author": "stadolf <stadolf@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@eth-optimism/sdk": "^3.2.2",
+    "ethers": "^5"
+  }
+}

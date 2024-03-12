@@ -34,12 +34,18 @@ https://docs.optimism.io/builders/dapp-developers/tutorials/standard-bridge-stan
 
 ### Bridging Demo
 
+see client/query.js for demo code that triggers the L1 withdrawal tx  
+
 Bridged 31_400 NEURON from Sepolia to Base Sepolia
-IN https://sepolia.etherscan.io/tx/0xbc3662aed33159efff45847372151529cab2cd785ec18b64219070fe4f836fb8
-OUT https://sepolia.basescan.org/tx/0xe54f5fc397cf11a7aced453bb4e54ec7735717f6083071c141754939967e342f
+- IN https://sepolia.etherscan.io/tx/0xbc3662aed33159efff45847372151529cab2cd785ec18b64219070fe4f836fb8
+- OUT https://sepolia.basescan.org/tx/0xe54f5fc397cf11a7aced453bb4e54ec7735717f6083071c141754939967e342f
 
 Withdraw 1_400 NEURON from Base Sepolia to Sepolia
-IN (burn) https://sepolia.basescan.org/tx/0x1fa07bf3c7fb8b91d91bb548e0a68e8712716a9b59ca384b5357fa873e6d22cc
-OUT 
+- IN (burn) https://sepolia.basescan.org/tx/0x1fa07bf3c7fb8b91d91bb548e0a68e8712716a9b59ca384b5357fa873e6d22cc
+- OUT Prove tx on L1: https://sepolia.etherscan.io/tx/0xf643aeb40c22fa41be4849e620774f1d52a7789ddfba31e114490ee6670dc750
+- ... 7 days pass for fraud proofs ...
+- OUT Finalize tx on L1: https://sepolia.etherscan.io/tx/0xd8690a7eba65ed926fdd1398a8b07c4a32c645000d02366a3494ef474c912d03
+
+
 
 
