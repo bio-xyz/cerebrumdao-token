@@ -15,6 +15,8 @@
 - Token Vesting: 0x79Ea691Ee2d1810FFb8300CD9d1B9Ba2A0EC15D1
 
 ### Mainnet
+- Token: [0xab814ce69E15F6B9660A3B184c0B0C97B9394A6b](https://etherscan.io/address/0xab814ce69E15F6B9660A3B184c0B0C97B9394A6b)
+
 
 ## Create standard L2 token
 
