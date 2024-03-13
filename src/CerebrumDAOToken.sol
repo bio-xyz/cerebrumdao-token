@@ -32,11 +32,9 @@ import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol";
 contract CerebrumDAOToken is ERC20, Ownable, ERC20Permit, ERC20Burnable {
     constructor(address initialOwner)
         ERC20("Cerebrum DAO Token", "NEURON")
-        Ownable(initialOwner)
         ERC20Permit("Cerebrum DAO Token")
-    {
-        _mint(initialOwner, 86000000000 * 10 ** decimals());
-    }
+        Ownable(initialOwner)
+    { }
 
     function mint(address to, uint256 amount) public onlyOwner {
         _mint(to, amount);

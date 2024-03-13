@@ -30,17 +30,23 @@ contract CerebrumDAOTokenTest is Test {
         vm.stopPrank();
     }
 
+    function preMint() public {
+        vm.startPrank(cerebrumDao);
+        token.mint(cerebrumDao, 86_000_000_000 * 10 ** 18);
+        vm.stopPrank();
+    }
+
     function testStateAfterDeployment() public {
         assertEq(token.name(), "Cerebrum DAO Token");
         assertEq(token.symbol(), "NEURON");
         assertEq(token.decimals(), 18);
         assertEq(token.owner(), cerebrumDao);
         
-        assertEq(token.totalSupply(), 86000000000 * 10 ** 18);
-        assertEq(token.balanceOf(cerebrumDao), 86000000000 * 10 ** 18);
+        assertEq(token.totalSupply(), 0);
     }
 
     function testTransfers() public {
+        preMint();
         vm.startPrank(cerebrumDao); 
         token.transfer(alice, 1000 ether);
         assertEq(token.balanceOf(alice), 1000 ether);
@@ -53,6 +59,7 @@ contract CerebrumDAOTokenTest is Test {
     }
 
     function testTokenBurn() public {
+        preMint();
         vm.startPrank(cerebrumDao);
         token.transfer(alice, 1000 ether);
         vm.stopPrank();
@@ -66,6 +73,7 @@ contract CerebrumDAOTokenTest is Test {
     }
 
     function testPermits() public {
+        preMint();
       vm.startPrank(cerebrumDao);
       token.transfer(alice, 1000 ether);
       vm.stopPrank();
